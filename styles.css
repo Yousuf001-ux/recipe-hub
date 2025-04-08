@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+.upper-content {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 2rem; */
+}
+
+.nav-bar {
+    width: 100%;
+    height: auto;
+    padding: 0.65rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.logo h1 {
+    font-family: "inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #301A22;
+}
+
+.profile {
+    width: fit-content;
+    height: auto;
+}
+
+.profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+}
+
+.search-section {
+    width: 100%;
+    height: auto;
+    background-color: #E63774;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 22rem;
+}
+
+.search-section .text {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    align-items: center;
+}
+
+.search-section .text h1 {
+    color: white;
+    letter-spacing: -0.25px;
+}
+
+.search-section .text p {
+    color: white;
+}
+
+.search {
+    width: 100%;
+    height: auto;
+}
+
+.search input {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.main-content {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.trending-text-container {
+    width: 100%;
+    height: auto;
+}
+
+.trending {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+
+.trending img {
+    width: 24px;
+    height: 24px;
+}
+
+.trending h1{
+    font-family: "inter", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.031rem;
+    color: #301A22;
+}
+
+.cards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 2rem;
+}
+
+.card {
+    width: 19%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    border-radius: 12px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 232px;
+    background-color: gray;
+    border-radius: 12px;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 232px;
+    border-radius: 12px;
+}
+
+.meal-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.meal-name {
+    width: fit-content;
+    height: auto;
+}
+
+.heading {
+    font-size: 1rem;
+    letter-spacing: -0.65px;
+    color: #301A22;
+}
+
+.meal-category {
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem 0.55rem;
+    border-radius: 24px;
+    background-color: #ffe6ef;
+}
+
+.paragraph {
+    font-size: 0.875rem;
+    color: #E63774;
+}
+
+@media(max-width:1320px){
+    .card {
+        width: 24%;
+    }
+}
+
+@media(max-width:1247px){
+    .search-section {
+        padding: 2rem;
+    }
+
+    .search {
+        width: 60%;
+    }
+    
+    .search input {
+        width: 100%;
+    }
+}
+
+@media(max-width:1230px){
+    .cards {
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 32%;
+    }
+
+    .thumbnail {
+        height: 264px;
+    }
+
+    .thumbnail img {
+        height: 264px;
+    }
+}
+
+@media(max-width:832px){
+    .cards {
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 48.5%;
+    }
+
+    .thumbnail {
+        height: 284px;
+    }
+
+    .thumbnail img {
+        height: 284px;
+    }
+}
+
+@media(max-width:580px){
+    .nav-bar {
+        padding: 0.65rem 1rem;
+    }
+
+    .search-section {
+        padding: 1rem;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search-section .text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .search-section .text p {
+        font-size: 0.875rem;
+    }
+
+    .card {
+        width: 100%;
+        row-gap: 0.85rem;
+    }
+
+    .thumbnail {
+        height: 344px;
+    }
+
+    .thumbnail img {
+        height: 344px;
+    }
+}
+
