@@ -1,5 +1,6 @@
 let cardContainer = document.getElementById("cards")
 let search = document.getElementById("searchBar")
+let fireEmoji = document.getElementById("fire")
 let trendingSection = document.getElementById("trire")
 let trendingText = document.getElementById("trext")
 
@@ -60,11 +61,15 @@ function performSearch(event){
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`).then((response)=>{
             return response.json()
         }).then((data)=>{
-            trendingText.innerHTML = `Delicious matches for '${searchValue}'`
             cardContainer.innerHTML = " "
-            // trendingText.textContent = `Delicious matches for ${searchValue}`
-            // console.log(trendingText);
 
+            if(!data.meals){
+                trendingText.innerHTML = `No results found for '${searchValue}'`
+                fireEmoji.innerHTML = ""
+                return;
+            }
+
+            trendingText.innerHTML = `Delicious matches for '${searchValue}'`
             let searchResults = data.meals
             searchResults.forEach((mealDetails)=>{
                 setTimeout(()=>{
@@ -101,7 +106,7 @@ function performSearch(event){
                     thumbnail.append(image)
                     card.append(thumbnail,mealInfoContainer)
                     cardContainer.append(card)
-                },300)
+                },100)
             })
         })
 
