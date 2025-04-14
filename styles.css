@@ -23,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgb(238, 238, 238);
 }
 
 .logo {
@@ -68,6 +69,19 @@
     padding: 2rem 22rem;
 }
 
+.search-section-hidden {
+    width: 100%;
+    height: auto;
+    background-color: #E63774;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 22rem;
+    display: none;
+}
+
 .search-section .text {
     width: fit-content;
     height: auto;
@@ -107,6 +121,16 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
+}
+
+.main-content-hidden {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    display: none;
 }
 
 .trending-text-container {
@@ -151,6 +175,7 @@
     flex-direction: column;
     row-gap: 0.5rem;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .thumbnail {
@@ -164,6 +189,11 @@
     width: 100%;
     height: 232px;
     border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail img:hover {
+    transform: scale(1.03);
 }
 
 .meal-info {
@@ -197,6 +227,10 @@
     font-size: 0.875rem;
     color: #E63774;
 }
+
+/* .details-content {
+
+} */
 
 @media(max-width:1320px){
     .card {

@@ -3,6 +3,8 @@ let search = document.getElementById("searchBar")
 let fireEmoji = document.getElementById("fire")
 let trendingSection = document.getElementById("trire")
 let trendingText = document.getElementById("trext")
+let heroSection = document.getElementById("search-section")
+let mainContentConatainer = document.getElementById("main-content")
 
 // This function randomly prints recipe on the UI. The function loops through the api 15times and randomly selects recipe and prints it on the UI
 function initializeUI(){
@@ -11,7 +13,7 @@ function initializeUI(){
             fetch("https://www.themealdb.com/api/json/v1/1/random.php").then((response)=>{
                 return response.json()
             }).then((data)=>{
-                // console.log(data);
+                console.log(data);
                 let mealName = data.meals[0].strMeal
                 let thumbnailImage = data.meals[0].strMealThumb
                 let mealCategory = data.meals[0].strCategory
@@ -46,8 +48,23 @@ function initializeUI(){
                 thumbnail.append(image)
                 card.append(thumbnail,mealInfoContainer)
                 cardContainer.append(card)
+
+                card.addEventListener("click", showDetails)
+                function showDetails(){
+                    if(heroSection.classList.contains("search-section")){
+                        heroSection.classList.remove("search-section")
+                        heroSection.classList.add("search-section-hidden")
+                    }
+                    if(mainContentConatainer.classList.contains("main-content")){
+                        mainContentConatainer.classList.remove("main-content")
+                        mainContentConatainer.classList.add("main-content-hidden")
+                    }
+                    // heroSection.innerHTML = ""
+                    // heroSection.style.backgroundColor = "white"
+                    // mainContentConatainer.innerHTML = ""
+                }
             })  
-        }, n * 500);
+        }, n * 100);
     }
 }
 initializeUI()
@@ -106,7 +123,7 @@ function performSearch(event){
                     thumbnail.append(image)
                     card.append(thumbnail,mealInfoContainer)
                     cardContainer.append(card)
-                },100)
+                },300)
             })
         })
 
