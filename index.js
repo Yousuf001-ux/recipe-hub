@@ -18,6 +18,7 @@ function initializeUI(){
                 let mealName = data.meals[0].strMeal
                 let thumbnailImage = data.meals[0].strMealThumb
                 let mealCategory = data.meals[0].strCategory
+                let mealID = data.meals[0].idMeal
                 // console.log(mealCategory);
                 
                 let card = document.createElement("div")
@@ -63,10 +64,15 @@ function initializeUI(){
                     if(detailsContainer.classList.contains("details-content")){
                         detailsContainer.classList.remove("details-content")
                         detailsContainer.classList.add("details-content-visible")
+                    }  
+                    // console.log(mealID);
+                    if(mealID){
+                        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`).then((response)=>{
+                            return response.json()
+                        }).then((mealData)=>{
+                            console.log(mealData);
+                        })
                     }
-                    // heroSection.innerHTML = ""
-                    // heroSection.style.backgroundColor = "white"
-                    // mainContentConatainer.innerHTML = ""
                 }
             })  
         }, n * 100);
@@ -130,7 +136,7 @@ function performSearch(event){
                     cardContainer.append(card)
 
                     card.addEventListener("click", showDetails)
-                function showDetails(){
+                    function showDetails(){
                     if(heroSection.classList.contains("search-section")){
                         heroSection.classList.remove("search-section")
                         heroSection.classList.add("search-section-hidden")
