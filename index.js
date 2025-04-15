@@ -5,6 +5,7 @@ let trendingSection = document.getElementById("trire")
 let trendingText = document.getElementById("trext")
 let heroSection = document.getElementById("search-section")
 let mainContentConatainer = document.getElementById("main-content")
+let detailsContainer = document.getElementById("details-content")
 
 // This function randomly prints recipe on the UI. The function loops through the api 15times and randomly selects recipe and prints it on the UI
 function initializeUI(){
@@ -58,6 +59,10 @@ function initializeUI(){
                     if(mainContentConatainer.classList.contains("main-content")){
                         mainContentConatainer.classList.remove("main-content")
                         mainContentConatainer.classList.add("main-content-hidden")
+                    }
+                    if(detailsContainer.classList.contains("details-content")){
+                        detailsContainer.classList.remove("details-content")
+                        detailsContainer.classList.add("details-content-visible")
                     }
                     // heroSection.innerHTML = ""
                     // heroSection.style.backgroundColor = "white"
@@ -123,6 +128,23 @@ function performSearch(event){
                     thumbnail.append(image)
                     card.append(thumbnail,mealInfoContainer)
                     cardContainer.append(card)
+
+                    card.addEventListener("click", showDetails)
+                function showDetails(){
+                    if(heroSection.classList.contains("search-section")){
+                        heroSection.classList.remove("search-section")
+                        heroSection.classList.add("search-section-hidden")
+                    }
+                    if(mainContentConatainer.classList.contains("main-content")){
+                        mainContentConatainer.classList.remove("main-content")
+                        mainContentConatainer.classList.add("main-content-hidden")
+                    }
+                    if(detailsContainer.classList.contains("details-content")){
+                        detailsContainer.classList.remove("details-content")
+                        detailsContainer.classList.add("details-content-visible")
+                    }
+                }
+
                 },300)
             })
         })
