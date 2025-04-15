@@ -14,6 +14,9 @@
     display: flex;
     flex-direction: column;
     /* row-gap: 2rem; */
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav-bar {
@@ -387,23 +390,34 @@
 
 @media(max-width:580px){
     .nav-bar {
-        padding: 0.65rem 1rem;
+        padding: 0.85rem 1rem;
     }
 
     .search-section {
-        padding: 1rem;
+        padding: 2.5rem 2rem;
+        row-gap: 2rem;
     }
 
     .search {
         width: 100%;
     }
 
+    .search input {
+        padding: 1.25rem 1rem;
+    }
+
     .search-section .text h1 {
-        font-size: 1.5rem;
+        font-size: 1.55rem;
+        text-align: center;
     }
     
     .search-section .text p {
-        font-size: 0.875rem;
+        font-size: 0.95rem;
+    }
+
+    .main-content {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     .card {
@@ -412,11 +426,11 @@
     }
 
     .thumbnail {
-        height: 344px;
+        height: 464px;
     }
 
     .thumbnail img {
-        height: 344px;
+        height: 464px;
     }
 }
 
