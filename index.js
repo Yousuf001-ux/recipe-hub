@@ -6,6 +6,7 @@ let trendingText = document.getElementById("trext")
 let heroSection = document.getElementById("search-section")
 let mainContentConatainer = document.getElementById("main-content")
 let detailsContainer = document.getElementById("details-content")
+let backButton = document.getElementById("details-content")
 
 // This function randomly prints recipe on the UI. The function loops through the api 15times and randomly selects recipe and prints it on the UI
 function initializeUI(){
@@ -73,6 +74,22 @@ function initializeUI(){
                             console.log(mealData);
                         })
                     }
+                }
+
+                backButton.addEventListener("click", goBack)
+                function goBack(){
+                    if(heroSection.classList.contains("search-section-hidden")){
+                        heroSection.classList.remove("search-section-hidden")
+                        heroSection.classList.add("search-section")
+                    }
+                    if(mainContentConatainer.classList.contains("main-content-hidden")){
+                        mainContentConatainer.classList.remove("main-content-hidden")
+                        mainContentConatainer.classList.add("main-content")
+                    }
+                    if(detailsContainer.classList.contains("details-content-visible")){
+                        detailsContainer.classList.remove("details-content-visible")
+                        detailsContainer.classList.add("details-content")
+                    }  
                 }
             })  
         }, n * 100);
@@ -149,6 +166,22 @@ function performSearch(event){
                         detailsContainer.classList.remove("details-content")
                         detailsContainer.classList.add("details-content-visible")
                     }
+
+                    backButton.addEventListener("click", goBack)
+                function goBack(){
+                    if(heroSection.classList.contains("search-section-hidden")){
+                        heroSection.classList.remove("search-section-hidden")
+                        heroSection.classList.add("search-section")
+                    }
+                    if(mainContentConatainer.classList.contains("main-content-hidden")){
+                        mainContentConatainer.classList.remove("main-content-hidden")
+                        mainContentConatainer.classList.add("main-content")
+                    }
+                    if(detailsContainer.classList.contains("details-content-visible")){
+                        detailsContainer.classList.remove("details-content-visible")
+                        detailsContainer.classList.add("details-content")
+                    }  
+                }
                 }
 
                 },300)
