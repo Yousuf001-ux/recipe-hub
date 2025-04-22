@@ -530,12 +530,16 @@ ul {
 
     .thumbnail-big-content {
         width: 100%;
-        height: 74vh;
+        height: 54vh;
     }
     
     .thumbnail-big {
         width: 100%;
-        height: 64vh;
+        height: 44vh;
+    }
+
+    .thumbnail-big img {
+        height: 44vh;
     }
 
     .ingd-inst {
@@ -552,6 +556,23 @@ ul {
     .instructions-container {
         width: 100%;
         height: auto;
+    }
+
+    .ingredients-text, .instructions-text {
+        position: sticky;
+        z-index: 0;
+    }
+
+    .ingredients-text h1 {
+        font-size: 1.25rem;
+    }
+    
+    .instructions-text h1 {
+        font-size: 1.25rem;
+    }
+
+    ul {
+        row-gap: 0.5rem;
     }
 }
 
