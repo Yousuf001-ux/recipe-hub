@@ -518,6 +518,10 @@ ul {
         padding: 0 1rem;
     }
 
+    .details-content-visible {
+        padding: 0 1rem;
+    }
+
     .details {
         flex-direction: column;
         height: auto;

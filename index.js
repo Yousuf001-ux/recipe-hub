@@ -6,7 +6,8 @@ let trendingText = document.getElementById("trext")
 let heroSection = document.getElementById("search-section")
 let mainContentConatainer = document.getElementById("main-content")
 let detailsContainer = document.getElementById("details-content")
-let backButton = document.getElementById("details-content")
+let backButton = document.getElementById("back-button")
+let details = document.getElementById("details-container")
 
 // This function randomly prints recipe on the UI. The function loops through the api 15times and randomly selects recipe and prints it on the UI
 function initializeUI(){
@@ -54,6 +55,7 @@ function initializeUI(){
 
                 card.addEventListener("click", showDetails)
                 function showDetails(){
+                    details.innerHTML = ""
                     if(heroSection.classList.contains("search-section")){
                         heroSection.classList.remove("search-section")
                         heroSection.classList.add("search-section-hidden")
@@ -171,8 +173,81 @@ function initializeUI(){
 
                             let ingInstContainer = document.createElement("div")
                             ingInstContainer.classList.add("ingd-inst")
-                            
-                            
+                            let ingredientsContainer = document.createElement("div")
+                            ingredientsContainer.classList.add("ingredients-container")
+                            let ingredientTextContainer = document.createElement("div")
+                            ingredientTextContainer.classList.add("ingredients-text")
+                            let ingredientText = document.createElement("h1")
+                            ingredientText.textContent = "Ingredients"
+                            let unorderedList = document.createElement("ul")
+                            let ing1 = document.createElement("li")
+                            ing1.textContent = ingredient1
+                            let ing2 = document.createElement("li")
+                            ing2.textContent = ingredient2
+                            let ing3 = document.createElement("li")
+                            ing3.textContent = ingredient3
+                            let ing4 = document.createElement("li")
+                            ing4.textContent = ingredient4
+                            let ing5 = document.createElement("li")
+                            ing5.textContent = ingredient5
+                            let ing6 = document.createElement("li")
+                            ing6.textContent = ingredient6
+                            let ing7 = document.createElement("li")
+                            ing7.textContent = ingredient7
+                            let ing8 = document.createElement("li")
+                            ing8.textContent = ingredient8
+                            let ing9 = document.createElement("li")
+                            ing9.textContent = ingredient9
+                            let ing10 = document.createElement("li")
+                            ing10.textContent = ingredient10
+                            let ing11 = document.createElement("li")
+                            ing11.textContent = ingredient11
+                            let ing12 = document.createElement("li")
+                            ing12.textContent = ingredient12
+                            let ing13 = document.createElement("li")
+                            ing13.textContent = ingredient13
+                            let ing14 = document.createElement("li")
+                            ing14.textContent = ingredient14
+                            let ing15 = document.createElement("li")
+                            ing15.textContent = ingredient15
+                            let ing16 = document.createElement("li")
+                            ing16.textContent = ingredient16
+                            let ing17 = document.createElement("li")
+                            ing17.textContent = ingredient17
+                            let ing18 = document.createElement("li")
+                            ing18.textContent = ingredient18
+                            let ing19 = document.createElement("li")
+                            ing19.textContent = ingredient19
+                            let ing20 = document.createElement("li")
+                            ing20.textContent = ingredient20
+                            let instructionsContainer = document.createElement("div")
+                            instructionsContainer.classList.add("instructions-container")
+                            let instructionTextContainer = document.createElement("div")
+                            instructionTextContainer.classList.add("instructions-text")
+                            let instructionText = document.createElement("h1")
+                            instructionText.textContent = "Instructions"
+                            let orderedList = document.createElement("ol")
+                            let inst = document.createElement("li")
+                            inst.textContent = instructions
+
+                            orderedList.append(inst)
+                            instructionTextContainer.append(instructionText)
+                            instructionsContainer.append(instructionTextContainer,orderedList)
+
+                            unorderedList.append(ing1,ing2,ing3,ing4,ing5,ing6,ing7,ing8,ing9,ing10,ing11,ing12,ing13,ing14,ing15,ing16,ing17,ing18,ing19,ing20)
+                            ingredientTextContainer.append(ingredientText)
+                            ingredientsContainer.append(ingredientTextContainer,unorderedList)
+                            ingInstContainer.append(ingredientsContainer,instructionsContainer)
+
+                            categoryContainer.append(categoryParagraph)
+                            prepTimeContainer.append(paragraph)
+                            mealNameContainer.append(dMealName)
+                            mealNameTimeContainer.append(mealNameContainer,prepTimeContainer)
+                            contentContainer.append(mealNameTimeContainer,categoryContainer)
+                            bThumbnailContainer.append(thumbnailBig)
+                            thumbnailContentContainer.append(bThumbnailContainer,contentContainer)
+                            details.classList.add("details")
+                            details.append(thumbnailContentContainer,ingInstContainer)
                         })
                     }
                 }
